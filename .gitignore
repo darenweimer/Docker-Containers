@@ -1,32 +1,4 @@
 #-------------------------------------------------------------------------------
-# Framework
-#-------------------------------------------------------------------------------
-
-/.idea
-/.vscode
-/node_modules
-/public/css
-/public/fonts
-/public/hot
-/public/img
-/public/js
-/public/main.js
-/public/mix-manifest.json
-/public/storage
-/storage/*.key
-/vendor
-.env
-.env.backup
-.phpunit.result.cache
-docker-compose.override.yml
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-
-
-
-#-------------------------------------------------------------------------------
 # Debug / Testing
 #-------------------------------------------------------------------------------
 
