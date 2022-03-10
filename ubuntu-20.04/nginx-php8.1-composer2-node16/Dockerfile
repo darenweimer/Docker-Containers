@@ -18,7 +18,7 @@ RUN apt update \
     # Install and Configure Nginx
 
     && apt install -y nginx \
-    && sed -i 's/root \/var\/www\/html;/root \/var\/www;/' /etc/nginx/sites-available/default \
+    && sed -i 's/root \/var\/www\/html;/root \/var\/www\/public;/' /etc/nginx/sites-available/default \
     && sed -i '/# pass PHP scripts to FastCGI server/,/#}/c\\tlocation ~ \\.php$ {\n\t\tinclude snippets/fastcgi-php.conf;\n\t\tfastcgi_pass unix:/run/php/php8.1-fpm.sock;\n\t}' /etc/nginx/sites-available/default \
     && sed -i 's/index index.html/index index.php index.html/' /etc/nginx/sites-available/default \
 
