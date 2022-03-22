@@ -75,10 +75,4 @@ RUN apt update \
 
     && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && apt install -y nodejs \
-    && npm install -g npm \
-
-    # Cleanup
-
-    && apt autoremove -y \
-    && apt clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && npm install -g npm
