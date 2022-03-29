@@ -41,6 +41,7 @@ RUN apt update \
        php8.1-fileinfo \
        php8.1-gd \
        php8.1-igbinary \
+       php8.1-imagick \
        php8.1-imap \
        php8.1-intl \
        php8.1-ldap \
