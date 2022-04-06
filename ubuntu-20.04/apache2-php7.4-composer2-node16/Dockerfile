@@ -10,6 +10,7 @@ RUN apt update \
     && apt install -y \
        systemd \
        htop \
+       mytop \
        net-tools \
        curl \
        unzip \

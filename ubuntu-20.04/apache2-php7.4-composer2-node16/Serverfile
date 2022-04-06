@@ -8,6 +8,7 @@ apt upgrade -y
 apt install -y \
     systemd \
     htop \
+    mytop \
     net-tools \
     curl \
     unzip \
