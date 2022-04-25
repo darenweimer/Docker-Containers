@@ -6,13 +6,11 @@ apt upgrade -y
 # Install System Commands
 
 apt install -y \
-    systemd \
     htop \
     mytop \
     net-tools \
     curl \
-    unzip \
-    nano
+    unzip
 
 # Install and Configure Nginx
 
