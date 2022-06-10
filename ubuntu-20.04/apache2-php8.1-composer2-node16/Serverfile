@@ -74,3 +74,4 @@ php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 curl -sL https://deb.nodesource.com/setup_16.x | bash -
 apt install -y nodejs
 npm install -g npm
+npm install -g npm
