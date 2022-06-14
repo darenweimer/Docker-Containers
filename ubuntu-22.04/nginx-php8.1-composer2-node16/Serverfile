@@ -1,0 +1,69 @@
+#!/bin/bash
+
+apt update
+apt upgrade -y
+
+# Install System Commands
+
+apt install -y \
+    htop \
+    mytop \
+    net-tools \
+    curl \
+    unzip
+
+# Install and Configure Nginx
+
+apt install -y nginx
+sed -i 's/root \/var\/www\/html;/root \/var\/www\/public;/' /etc/nginx/sites-available/default
+sed -i '/# pass PHP scripts to FastCGI server/,/#}/c\\tlocation ~ \\.php$ {\n\t\tinclude snippets/fastcgi-php.conf;\n\t\tfastcgi_pass unix:/run/php/php8.1-fpm.sock;\n\t}' /etc/nginx/sites-available/default
+sed -i 's/index index.html/index index.php index.html/' /etc/nginx/sites-available/default
+
+# Install PHP 8.1 and Extensions
+
+apt install -y \
+    php8.1 \
+    php8.1-bcmath \
+    php8.1-cli \
+    php8.1-ctype \
+    php8.1-curl \
+    php8.1-fileinfo \
+    php8.1-fpm \
+    php8.1-gd \
+    php8.1-igbinary \
+    php8.1-imagick \
+    php8.1-imap \
+    php8.1-intl \
+    php8.1-ldap \
+    php8.1-mbstring \
+    php8.1-memcached \
+    php8.1-msgpack \
+    php8.1-mysql \
+    php8.1-pcov \
+    php8.1-pdo \
+    php8.1-pgsql \
+    php8.1-readline \
+    php8.1-redis \
+    php8.1-soap \
+    php8.1-tokenizer \
+    php8.1-xdebug \
+    php8.1-xml \
+    php8.1-zip
+
+# Install Application Schedulers
+
+apt install -y \
+    cron \
+    supervisor
+
+# Install Composer 2.x
+
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+# Install Node 16.x
+
+curl -sL https://deb.nodesource.com/setup_16.x | bash -
+apt install -y nodejs
+npm install --location=global npm
+npm install --location=global npm
