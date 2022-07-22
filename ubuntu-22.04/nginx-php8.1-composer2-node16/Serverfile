@@ -69,3 +69,10 @@ curl -sL https://deb.nodesource.com/setup_16.x | bash -
 apt install -y nodejs
 npm install --location=global npm
 npm install --location=global npm
+
+# Start Required Services
+
+service cron start
+service supervisor start
+service php8.1-fpm start
+service nginx restart
